@@ -6,10 +6,10 @@ import sys
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, TensorDataset
 
-# Adjust path so that mnist.py and Sub_model.py (in /mnt/data) can be imported
+# Adjust path so that target_model.py and Sub_model.py (in /mnt/data) can be imported
 sys.path.append('/mnt/data')
-from mnist import MNIST as TargetModel
-from sub_model import SubstituteModel
+from target_model import MNIST as TargetModel
+from extraction_attack import SubstituteModel
 
 # Device & MNIST test loader
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

@@ -7,7 +7,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, Subset
-from mnist import MNIST
+from target_model import MNIST
 
 # ---------------------------------------
 # Utility: Train a model on a DataLoader
@@ -329,4 +329,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

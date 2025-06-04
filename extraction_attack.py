@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, TensorDataset, Subset
-from mnist import MNIST
+from target_model import MNIST
 import random
 
 # Define the substitute model
@@ -32,7 +32,7 @@ def main():
         transforms.Normalize((0.1307,), (0.3081,)),
     ])
 
-    # Load full MNIST test set, then sample a smaller subset of 10000 for querying
+    # Load full MNIST test set, then sample a smaller subset of 5000 for querying
     full_test = datasets.MNIST(root='./data/MNIST', train=False, download=True, transform=transform)
     all_indices = list(range(len(full_test)))
     random.shuffle(all_indices)
